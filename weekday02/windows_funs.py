@@ -3,7 +3,7 @@ import datetime
 import time
 
 
-def sorce():
+def source():
     while True:
         {'value':random.randint(1,100),'datetime':datetime.datetime.now()}
         time.sleep(1)
@@ -35,3 +35,10 @@ def window(src,handler,width:int,interval:int):
             start = current
 
             buffer = [x for x in buffer if x['datetime'] > current - delta]
+
+def handler(iterable):
+    vals = [x['value'] for x in iterable]
+    return  sum(vals) / len(vals)
+
+
+window(source,handler,)
