@@ -40,7 +40,7 @@ def dispatcher(src):
         queues.append(q)
 
         h = threading.Thread(target=windows,args=(q,width,interval))
-        handler.append(h)
+        handlers.append(h)
 
     def run():
         for t in handlers:
