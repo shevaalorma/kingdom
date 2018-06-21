@@ -14,10 +14,17 @@ class Document:
 class Word(Document):pass
 class Pdf(Document):pass
 
+class SuperPrintableMixin(PrintableMixin):
+    def print(self):
+        print('~'*20)
+        super().print()
+        print('~'*20)
 
-class PrintableWord(PrintableMixin,Word):pass # PrintableWord = printable(PrintableWord)
+class PrintableWord(SuperPrintableMixin,Word):pass # PrintableWord = printable(PrintableWord)
 print(PrintableWord.__dict__)
 print(PrintableWord.mro())
+
+
 
 pw = PrintableWord('test string')
 pw.print()
