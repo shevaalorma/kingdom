@@ -50,7 +50,7 @@ class LinkedList:
 
         node = SingleNode(node)
         prev = current.prev
-        next = node.next
+
 
         # 找到了
         if prev is None:  # ==1
@@ -119,9 +119,6 @@ ll.append('4')
 ll.append('5')
 print(ll.head, ll.tail)
 ll.insert(100, '6')
-ll.pop()
-ll.pop()
-ll.pop()
 ll.remove(1)
 for x in ll.iternodes():
     print(x)
